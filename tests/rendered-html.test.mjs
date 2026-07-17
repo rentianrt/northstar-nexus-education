@@ -80,6 +80,9 @@ test("server-renders the English landing page at the default route", async () =>
   assert.match(html, /property="og:url" content="https:\/\/northstar\.example\/"/i);
   assert.match(html, /property="og:locale" content="en_US"/i);
   assert.match(html, /https:\/\/northstar\.example\/og-en\.png/i);
+  assert.match(html, /EXPERTISE AREA/);
+  assert.match(html, /capability areas rather than individual biographies/i);
+  assert.doesNotMatch(html, /REPRESENTATIVE MENTOR|individual mentors’ educational or professional backgrounds/i);
   assertSharedSeo(html, "/");
   assert.doesNotMatch(
     html,
@@ -104,6 +107,9 @@ test("server-renders the Chinese landing page at /zh", async () => {
   assert.match(html, /property="og:url" content="https:\/\/northstar\.example\/zh"/i);
   assert.match(html, /property="og:locale" content="zh_CN"/i);
   assert.match(html, /https:\/\/northstar\.example\/og-zh\.png/i);
+  assert.match(html, /专业方向/);
+  assert.match(html, /专业能力方向，而非个人履历/);
+  assert.doesNotMatch(html, /REPRESENTATIVE MENTOR|上述机构仅表示导师个人学习或任职经历/);
   assertSharedSeo(html, "/zh");
   assert.doesNotMatch(
     html,
@@ -112,12 +118,13 @@ test("server-renders the Chinese landing page at /zh", async () => {
 });
 
 test("keeps the bilingual route and metadata architecture production-ready", async () => {
-  const [enPage, zhPage, enLayout, zhLayout, metadata, packageJson] =
+  const [enPage, zhPage, enLayout, zhLayout, marketingPage, metadata, packageJson] =
     await Promise.all([
       readFile(new URL("../app/(en)/page.tsx", import.meta.url), "utf8"),
       readFile(new URL("../app/(zh)/zh/page.tsx", import.meta.url), "utf8"),
       readFile(new URL("../app/(en)/layout.tsx", import.meta.url), "utf8"),
       readFile(new URL("../app/(zh)/layout.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/_components/MarketingPage.tsx", import.meta.url), "utf8"),
       readFile(new URL("../app/_lib/site-metadata.ts", import.meta.url), "utf8"),
       readFile(new URL("../package.json", import.meta.url), "utf8"),
     ]);
@@ -129,6 +136,10 @@ test("keeps the bilingual route and metadata architecture production-ready", asy
   assert.match(metadata, /"x-default": new URL\("\/", metadataBase\)/);
   assert.match(metadata, /image: "\/og-en\.png"/);
   assert.match(metadata, /image: "\/og-zh\.png"/);
+  assert.doesNotMatch(
+    marketingPage,
+    /name:|REPRESENTATIVE MENTOR|individual mentors’ educational or professional backgrounds|上述机构仅表示导师个人学习或任职经历/,
+  );
   assert.doesNotMatch(metadata, /Starter Project|codex-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });

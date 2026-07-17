@@ -209,43 +209,43 @@ const copy = {
       ],
     },
     mentors: {
-      heading: "Match with expertise that fits the work.",
-      intro: "Our representative mentors span digital economics, LLMs, AI safety, materials intelligence, multimodal AI, and sustainability.",
+      heading: "Expertise matched to the work your project requires.",
+      intro: "Our mentor network is organized around six capability areas. Support is matched to each student’s research question, project stage, and next milestone.",
       list: [
         {
-          name: "ROY",
-          field: "Digital Economy · Tokenomics",
-          background: "USTC / Harvard / NYU / Fosun / University of Amsterdam",
+          title: "Digital Economy & Tokenomics",
+          field: "Web3 · Causal Inference · Mechanism Design",
+          background: "Support for turning public data and economic questions into testable research designs.",
         },
         {
-          name: "POPEYES",
-          field: "LLMs · Game Theory",
-          background: "Tsinghua University / MIT / Two Sigma / OpenAI",
+          title: "LLMs & Strategic Systems",
+          field: "Large Language Models · Game Theory · Multi-Agent Collaboration",
+          background: "Guidance on designing simulations, interaction mechanisms, and clear evaluation frameworks.",
         },
         {
-          name: "DAVID",
-          field: "LLMs · Natural Language Processing",
-          background: "Peking University / Stanford / Google DeepMind",
+          title: "Language Intelligence",
+          field: "Natural Language Processing · LLM Applications · Model Evaluation",
+          background: "Support across data preparation, experiment design, benchmarking, and evidence-based interpretation.",
         },
         {
-          name: "DORAEMON",
-          field: "AI Inference Systems · Automotive AI · AI Safety",
-          background: "University of Washington / NVIDIA",
+          title: "AI Systems & Safety",
+          field: "Inference Systems · Edge AI · Safety Evaluation",
+          background: "Guidance on balancing performance, efficiency, robustness, and responsible system behavior.",
         },
         {
-          name: "JAY",
-          field: "AI for Materials · Systems Design",
-          background: "USTC / University of Michigan / Meta",
+          title: "AI for Materials & Scientific Discovery",
+          field: "Scientific Machine Learning · Materials Informatics · Systems Design",
+          background: "Support for structuring scientific datasets, building predictive workflows, and planning validation.",
         },
         {
-          name: "CAESER",
-          field: "Multimodal AI · Computer Vision · VLMs · LLMs",
-          background: "Shanghai Jiao Tong University / University of Rochester / Boston University / LinkedIn / Microsoft",
+          title: "Multimodal Intelligence",
+          field: "Computer Vision · Vision-Language Models · Multimodal Learning",
+          background: "Guidance on combining text, image, and structured data into measurable research projects.",
         },
       ],
-      cardLabel: "REPRESENTATIVE MENTOR",
+      cardLabel: "EXPERTISE AREA",
       disclaimer:
-        "The institutions listed above reflect individual mentors’ educational or professional backgrounds only. They do not indicate any partnership, authorization, recommendation, or endorsement of Northstar Nexus Education. Mentor availability is subject to fit and scheduling.",
+        "These profiles represent capability areas rather than individual biographies. Matching depends on project needs, mentor availability, and the scope of support required.",
     },
     outputs: {
       heading: "Leave with work you can keep building on.",
@@ -448,18 +448,18 @@ const copy = {
       ],
     },
     mentors: {
-      heading: "让匹配，落到具体领域",
-      intro: "代表导师覆盖数字经济、LLM、AI 安全、材料智能、多模态与可持续等方向。",
+      heading: "围绕项目所需能力，匹配合适的专业支持",
+      intro: "我们的导师网络按六类专业能力组织，并根据学生的研究问题、项目阶段与下一里程碑进行匹配。",
       list: [
-        { name: "ROY", field: "数字经济 · Tokenomics", background: "中科大 / Harvard / NYU / 复星 / University of Amsterdam" },
-        { name: "POPEYES", field: "LLM · 博弈论", background: "清华 / MIT / Two Sigma / OpenAI" },
-        { name: "DAVID", field: "LLM · NLP", background: "北大 / Stanford / Google DeepMind" },
-        { name: "DORAEMON", field: "推理系统 · 汽车 AI · AI 安全", background: "University of Washington / NVIDIA" },
-        { name: "JAY", field: "AI for Materials · 系统设计", background: "中科大 / University of Michigan / Meta" },
-        { name: "CAESER", field: "多模态 · CV · VLM · LLM", background: "上海交大 / Rochester / Boston University / LinkedIn / Microsoft" },
+        { title: "数字经济与代币经济", field: "Web3 · 因果推断 · 机制设计", background: "支持将公开数据与经济问题转化为可检验的研究设计。" },
+        { title: "大语言模型与策略系统", field: "大语言模型 · 博弈论 · 多智能体协作", background: "支持设计仿真实验、交互机制与清晰的评估框架。" },
+        { title: "语言智能", field: "自然语言处理 · 大模型应用 · 模型评估", background: "覆盖数据准备、实验设计、基准测试与基于证据的结果解读。" },
+        { title: "AI 系统与安全", field: "推理系统 · 边缘 AI · 安全评估", background: "支持在性能、效率、稳健性与负责任的系统行为之间建立平衡。" },
+        { title: "AI 材料与科学发现", field: "科学机器学习 · 材料信息学 · 系统设计", background: "支持科学数据结构化、预测流程构建与验证方案设计。" },
+        { title: "多模态智能", field: "计算机视觉 · 视觉语言模型 · 多模态学习", background: "支持将文本、图像与结构化数据整合为可衡量的研究项目。" },
       ],
-      cardLabel: "REPRESENTATIVE MENTOR",
-      disclaimer: "上述机构仅表示导师个人学习或任职经历，不代表相关机构与北辰智汇存在合作、授权、推荐或背书关系；实际导师以目标适配与档期为准。",
+      cardLabel: "专业方向",
+      disclaimer: "以上内容展示的是专业能力方向，而非个人履历。实际匹配将根据项目需求、导师档期与所需支持范围综合确定。",
     },
     outputs: {
       heading: "最终带走的，是能继续使用的成果资产",
@@ -854,17 +854,17 @@ export default function MarketingPage({ locale }: MarketingPageProps) {
             </div>
 
             <div className="mentor-grid">
-              {t.mentors.list.map((mentor, index) => (
-                <article className="mentor-card" key={mentor.name}>
+              {t.mentors.list.map((area, index) => (
+                <article className="mentor-card" key={area.title}>
                   <div className="mentor-avatar" aria-hidden="true">
                     <span>{String(index + 1).padStart(2, "0")}</span>
                     <i>✦</i>
                   </div>
                   <div className="mentor-copy">
                     <small>{t.mentors.cardLabel}</small>
-                    <h3>{mentor.name}</h3>
-                    <strong>{mentor.field}</strong>
-                    <p>{mentor.background}</p>
+                    <h3>{area.title}</h3>
+                    <strong>{area.field}</strong>
+                    <p>{area.background}</p>
                   </div>
                 </article>
               ))}

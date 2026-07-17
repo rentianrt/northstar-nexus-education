@@ -1739,12 +1739,15 @@ select {
 .mentor-copy h3 {
   margin: 8px 0 5px;
   font-size: 27px;
+  line-height: 1.15;
   letter-spacing: -0.03em;
 }
 
 .mentor-copy strong {
+  display: block;
   color: var(--cyan);
   font-size: 11px;
+  line-height: 1.45;
 }
 
 .mentor-copy p {
@@ -1763,6 +1766,15 @@ select {
   font-size: 9px;
   line-height: 1.7;
   text-align: right;
+}
+
+.locale-en .mentor-card {
+  min-height: 292px;
+}
+
+.locale-en .mentor-copy h3 {
+  font-size: 22px;
+  text-wrap: balance;
 }
 
 .outputs-section {
