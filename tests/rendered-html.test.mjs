@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const TEST_ORIGIN = "https://northstar.example";
+const REMOVED_QUANT_FIRM = new RegExp(["Two", "Sigma"].join("\\s+"), "i");
 
 async function render(pathname) {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -83,8 +84,14 @@ test("server-renders the English landing page at the default route", async () =>
   assert.match(html, /ACADEMIC × INDUSTRY NETWORK/);
   assert.match(html, /Stanford University/);
   assert.match(html, /Google DeepMind/);
+  assert.match(html, /Tesla/);
+  assert.match(html, /TikTok/);
+  assert.match(html, /Uber/);
+  assert.match(html, /Waymo/);
+  assert.match(html, /11 ORGANIZATIONS/);
   assert.match(html, /shown in aggregate/i);
   assert.match(html, /does not imply a partnership/i);
+  assert.doesNotMatch(html, REMOVED_QUANT_FIRM);
   assert.doesNotMatch(html, /OUR PARTNERS|PARTNER UNIVERSITIES|PARTNER COMPANIES|backed by/i);
   assertSharedSeo(html, "/");
   assert.doesNotMatch(
@@ -113,9 +120,15 @@ test("server-renders the Chinese landing page at /zh", async () => {
   assert.match(html, /高校 × 企业网络/);
   assert.match(html, /斯坦福大学/);
   assert.match(html, /Google DeepMind/);
+  assert.match(html, /Tesla/);
+  assert.match(html, /TikTok/);
+  assert.match(html, /Uber/);
+  assert.match(html, /Waymo/);
+  assert.match(html, /11 ORGANIZATIONS/);
   assert.match(html, /采用匿名汇总方式/);
   assert.match(html, /不代表相关机构与北辰智汇存在合作、授权、赞助、推荐或背书关系/);
   assert.match(html, /不建立机构与个人之间的对应关系/);
+  assert.doesNotMatch(html, REMOVED_QUANT_FIRM);
   assert.doesNotMatch(html, /合作院校|合作企业|官方合作|战略伙伴|backed by/i);
   assertSharedSeo(html, "/zh");
   assert.doesNotMatch(
