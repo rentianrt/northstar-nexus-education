@@ -209,43 +209,58 @@ const copy = {
       ],
     },
     mentors: {
-      heading: "Expertise matched to the work your project requires.",
-      intro: "Our mentor network is organized around six capability areas. Support is matched to each student’s research question, project stage, and next milestone.",
-      list: [
+      eyebrow: "ACADEMIC × INDUSTRY NETWORK",
+      heading: "Where academic depth meets industry intelligence.",
+      intro: "The collective educational, research, and professional experience represented across our broader mentor network spans universities and organizations shaping AI, science, economics, and technology.",
+      metricsLabel: "Institution network at a glance",
+      metrics: [
+        ["13", "GLOBAL UNIVERSITIES"],
+        ["08", "TECH & INDUSTRY ORGANIZATIONS"],
+        ["06", "EXPERTISE AREAS"],
+      ],
+      groups: [
         {
-          title: "Digital Economy & Tokenomics",
-          field: "Web3 · Causal Inference · Mechanism Design",
-          background: "Support for turning public data and economic questions into testable research designs.",
+          key: "academic",
+          label: "ACADEMIC CONSTELLATION",
+          title: "Global Universities",
+          count: "13 UNIVERSITIES",
+          description: "Collective educational and research backgrounds spanning North America, Europe, and Asia.",
+          items: [
+            "Stanford University",
+            "MIT",
+            "Harvard University",
+            "Tsinghua University",
+            "Peking University",
+            "University of Science and Technology of China",
+            "Shanghai Jiao Tong University",
+            "New York University",
+            "University of Michigan",
+            "University of Washington",
+            "University of Amsterdam",
+            "University of Rochester",
+            "Boston University",
+          ],
         },
         {
-          title: "LLMs & Strategic Systems",
-          field: "Large Language Models · Game Theory · Multi-Agent Collaboration",
-          background: "Guidance on designing simulations, interaction mechanisms, and clear evaluation frameworks.",
-        },
-        {
-          title: "Language Intelligence",
-          field: "Natural Language Processing · LLM Applications · Model Evaluation",
-          background: "Support across data preparation, experiment design, benchmarking, and evidence-based interpretation.",
-        },
-        {
-          title: "AI Systems & Safety",
-          field: "Inference Systems · Edge AI · Safety Evaluation",
-          background: "Guidance on balancing performance, efficiency, robustness, and responsible system behavior.",
-        },
-        {
-          title: "AI for Materials & Scientific Discovery",
-          field: "Scientific Machine Learning · Materials Informatics · Systems Design",
-          background: "Support for structuring scientific datasets, building predictive workflows, and planning validation.",
-        },
-        {
-          title: "Multimodal Intelligence",
-          field: "Computer Vision · Vision-Language Models · Multimodal Learning",
-          background: "Guidance on combining text, image, and structured data into measurable research projects.",
+          key: "industry",
+          label: "INDUSTRY CONSTELLATION",
+          title: "Frontier Technology & Industry",
+          count: "8 ORGANIZATIONS",
+          description: "Collective professional experience across AI labs, computing platforms, quantitative finance, and global industry.",
+          items: ["OpenAI", "Google DeepMind", "NVIDIA", "Meta", "Microsoft", "LinkedIn", "Two Sigma", "Fosun"],
         },
       ],
-      cardLabel: "EXPERTISE AREA",
+      bridgeLabel: "ACADEMIA ↔ INDUSTRY · ONE CONNECTED NETWORK",
+      expertise: [
+        "Digital Economy",
+        "Strategic LLM Systems",
+        "Language Intelligence",
+        "AI Systems & Safety",
+        "Scientific Discovery",
+        "Multimodal Intelligence",
+      ],
       disclaimer:
-        "These profiles represent capability areas rather than individual biographies. Matching depends on project needs, mentor availability, and the scope of support required.",
+        "Institution names reflect selected educational or professional backgrounds across our broader mentor network and are shown in aggregate. Their inclusion does not imply a partnership, authorization, sponsorship, recommendation, or endorsement of Northstar Nexus Education. No individual identity or institution-to-person mapping is displayed. Mentor participation is subject to project fit and availability.",
     },
     outputs: {
       heading: "Leave with work you can keep building on.",
@@ -448,18 +463,50 @@ const copy = {
       ],
     },
     mentors: {
-      heading: "围绕项目所需能力，匹配合适的专业支持",
-      intro: "我们的导师网络按六类专业能力组织，并根据学生的研究问题、项目阶段与下一里程碑进行匹配。",
-      list: [
-        { title: "数字经济与代币经济", field: "Web3 · 因果推断 · 机制设计", background: "支持将公开数据与经济问题转化为可检验的研究设计。" },
-        { title: "大语言模型与策略系统", field: "大语言模型 · 博弈论 · 多智能体协作", background: "支持设计仿真实验、交互机制与清晰的评估框架。" },
-        { title: "语言智能", field: "自然语言处理 · 大模型应用 · 模型评估", background: "覆盖数据准备、实验设计、基准测试与基于证据的结果解读。" },
-        { title: "AI 系统与安全", field: "推理系统 · 边缘 AI · 安全评估", background: "支持在性能、效率、稳健性与负责任的系统行为之间建立平衡。" },
-        { title: "AI 材料与科学发现", field: "科学机器学习 · 材料信息学 · 系统设计", background: "支持科学数据结构化、预测流程构建与验证方案设计。" },
-        { title: "多模态智能", field: "计算机视觉 · 视觉语言模型 · 多模态学习", background: "支持将文本、图像与结构化数据整合为可衡量的研究项目。" },
+      eyebrow: "高校 × 企业网络",
+      heading: "让学术深度与产业前沿，在同一张网络中汇合",
+      intro: "导师网络所汇聚的集体学习、研究与职业经历，来自推动 AI、科学、经济与技术发展的全球高校与企业。",
+      metricsLabel: "高校与企业网络概览",
+      metrics: [
+        ["13", "所全球高校"],
+        ["08", "家科技与产业机构"],
+        ["06", "类专业能力方向"],
       ],
-      cardLabel: "专业方向",
-      disclaimer: "以上内容展示的是专业能力方向，而非个人履历。实际匹配将根据项目需求、导师档期与所需支持范围综合确定。",
+      groups: [
+        {
+          key: "academic",
+          label: "ACADEMIC CONSTELLATION",
+          title: "全球高校",
+          count: "13 UNIVERSITIES",
+          description: "覆盖北美、欧洲与亚洲的集体学习和科研经历。",
+          items: [
+            "斯坦福大学",
+            "麻省理工学院",
+            "哈佛大学",
+            "清华大学",
+            "北京大学",
+            "中国科学技术大学",
+            "上海交通大学",
+            "纽约大学",
+            "密歇根大学",
+            "华盛顿大学",
+            "阿姆斯特丹大学",
+            "罗切斯特大学",
+            "波士顿大学",
+          ],
+        },
+        {
+          key: "industry",
+          label: "INDUSTRY CONSTELLATION",
+          title: "前沿科技与产业",
+          count: "8 ORGANIZATIONS",
+          description: "汇集 AI 实验室、计算平台、量化金融与全球产业的集体职业经历。",
+          items: ["OpenAI", "Google DeepMind", "NVIDIA", "Meta", "Microsoft", "LinkedIn", "Two Sigma", "复星"],
+        },
+      ],
+      bridgeLabel: "高校 ↔ 企业 · 一张彼此连接的经验网络",
+      expertise: ["数字经济", "大模型策略系统", "语言智能", "AI 系统与安全", "科学智能", "多模态智能"],
+      disclaimer: "所列机构采用匿名汇总方式，仅用于说明导师网络所汇聚的教育或职业背景，不代表相关机构与北辰智汇存在合作、授权、赞助、推荐或背书关系。页面不展示任何个人身份，也不建立机构与个人之间的对应关系；具体导师参与以项目适配度与档期为准。",
     },
     outputs: {
       heading: "最终带走的，是能继续使用的成果资产",
@@ -847,27 +894,58 @@ export default function MarketingPage({ locale }: MarketingPageProps) {
           <div className="section-shell">
             <div className="path-heading mentors-heading">
               <div>
-                <p className="eyebrow light-eyebrow"><span>07</span> MENTOR NETWORK</p>
+                <p className="eyebrow light-eyebrow"><span>07</span> {t.mentors.eyebrow}</p>
                 <h2>{t.mentors.heading}</h2>
               </div>
               <p>{t.mentors.intro}</p>
             </div>
 
-            <div className="mentor-grid">
-              {t.mentors.list.map((area, index) => (
-                <article className="mentor-card" key={area.title}>
-                  <div className="mentor-avatar" aria-hidden="true">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <i>✦</i>
+            <div className="network-metrics" aria-label={t.mentors.metricsLabel}>
+              {t.mentors.metrics.map(([value, label]) => (
+                <div key={label}>
+                  <strong>{value}</strong>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="institution-showcase">
+              {t.mentors.groups.map((group, groupIndex) => (
+                <article className={`institution-panel institution-panel-${group.key}`} key={group.key}>
+                  <div className="institution-panel-head">
+                    <div>
+                      <div className="institution-kicker">
+                        <span>{String(groupIndex + 1).padStart(2, "0")}</span>
+                        <small>{group.label}</small>
+                      </div>
+                      <h3>{group.title}</h3>
+                      <p>{group.description}</p>
+                    </div>
+                    <strong>{group.count}</strong>
                   </div>
-                  <div className="mentor-copy">
-                    <small>{t.mentors.cardLabel}</small>
-                    <h3>{area.title}</h3>
-                    <strong>{area.field}</strong>
-                    <p>{area.background}</p>
-                  </div>
+
+                  <ul className="institution-list">
+                    {group.items.map((institution, index) => (
+                      <li className="institution-tile" key={institution}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <strong>{institution}</strong>
+                        <i aria-hidden="true">✦</i>
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               ))}
+
+              <div className="network-bridge">
+                <div className="network-bridge-label">
+                  <span aria-hidden="true">✦</span>
+                  <strong>{t.mentors.bridgeLabel}</strong>
+                  <span aria-hidden="true">✦</span>
+                </div>
+                <div className="expertise-ribbon">
+                  {t.mentors.expertise.map((area) => <span key={area}>{area}</span>)}
+                </div>
+              </div>
             </div>
             <p className="mentor-disclaimer">{t.mentors.disclaimer}</p>
           </div>

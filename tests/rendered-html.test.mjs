@@ -80,9 +80,12 @@ test("server-renders the English landing page at the default route", async () =>
   assert.match(html, /property="og:url" content="https:\/\/northstar\.example\/"/i);
   assert.match(html, /property="og:locale" content="en_US"/i);
   assert.match(html, /https:\/\/northstar\.example\/og-en\.png/i);
-  assert.match(html, /EXPERTISE AREA/);
-  assert.match(html, /capability areas rather than individual biographies/i);
-  assert.doesNotMatch(html, /REPRESENTATIVE MENTOR|individual mentors’ educational or professional backgrounds/i);
+  assert.match(html, /ACADEMIC × INDUSTRY NETWORK/);
+  assert.match(html, /Stanford University/);
+  assert.match(html, /Google DeepMind/);
+  assert.match(html, /shown in aggregate/i);
+  assert.match(html, /does not imply a partnership/i);
+  assert.doesNotMatch(html, /OUR PARTNERS|PARTNER UNIVERSITIES|PARTNER COMPANIES|backed by/i);
   assertSharedSeo(html, "/");
   assert.doesNotMatch(
     html,
@@ -107,9 +110,13 @@ test("server-renders the Chinese landing page at /zh", async () => {
   assert.match(html, /property="og:url" content="https:\/\/northstar\.example\/zh"/i);
   assert.match(html, /property="og:locale" content="zh_CN"/i);
   assert.match(html, /https:\/\/northstar\.example\/og-zh\.png/i);
-  assert.match(html, /专业方向/);
-  assert.match(html, /专业能力方向，而非个人履历/);
-  assert.doesNotMatch(html, /REPRESENTATIVE MENTOR|上述机构仅表示导师个人学习或任职经历/);
+  assert.match(html, /高校 × 企业网络/);
+  assert.match(html, /斯坦福大学/);
+  assert.match(html, /Google DeepMind/);
+  assert.match(html, /采用匿名汇总方式/);
+  assert.match(html, /不代表相关机构与北辰智汇存在合作、授权、赞助、推荐或背书关系/);
+  assert.match(html, /不建立机构与个人之间的对应关系/);
+  assert.doesNotMatch(html, /合作院校|合作企业|官方合作|战略伙伴|backed by/i);
   assertSharedSeo(html, "/zh");
   assert.doesNotMatch(
     html,
@@ -138,7 +145,7 @@ test("keeps the bilingual route and metadata architecture production-ready", asy
   assert.match(metadata, /image: "\/og-zh\.png"/);
   assert.doesNotMatch(
     marketingPage,
-    /name:|REPRESENTATIVE MENTOR|individual mentors’ educational or professional backgrounds|上述机构仅表示导师个人学习或任职经历/,
+    /name:|mentorName|personName|nickname|portrait|headshot|graduationYear|jobTitle|OUR PARTNERS|PARTNER UNIVERSITIES|PARTNER COMPANIES|合作院校|合作企业|官方合作|战略伙伴|backed by/i,
   );
   assert.doesNotMatch(metadata, /Starter Project|codex-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
